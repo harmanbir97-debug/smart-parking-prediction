@@ -101,8 +101,7 @@ with right:
     st.info("This is a dataset-based estimate for one slot, not a live sensor reading or a guarantee of availability.")
 
 if predict_clicked:
-    input_row = pd.DataFrame(0, index=[0], columns=feature_cols)
-
+    input_row = pd.DataFrame(0.0, index=[0], columns=feature_cols, dtype=float)
     time_features = {
         "hour_sin": np.sin(2 * np.pi * hour / 24),
         "hour_cos": np.cos(2 * np.pi * hour / 24),
